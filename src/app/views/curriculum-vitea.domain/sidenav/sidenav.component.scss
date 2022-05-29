@@ -13,18 +13,13 @@
         align-items: center;
         padding: 0.938rem 0.938rem 0 0.938rem;
         width: 100%;
-
-        .logo {
-            background: #fff;
+        .burger-menu {
+            color: #fff;
             text-align: center;
-            width: 3rem;
-            min-width: 3rem;
-            border-radius: 0.313rem;
-            padding: 0.313rem;
-            font-size: 24px;
-            font-weight: 900;
             cursor: pointer;
-            border: none;
+            padding-left: 0.75rem;
+            font-weight: 900;
+            
         }
 
         .logo-text {
@@ -91,10 +86,18 @@
         }
     }
 
-    .side-nav-item:hover{
-        .sidenav-nav-link{
+    .side-nav-item:hover {
+        .sidenav-nav-link {
             background-color: #fff;
             color: #000;
         }
+    }
+}
+
+.active{
+    background-color: #fff;
+    .sidenav-link-icon,
+    .sindenav-link-text{
+        color: #000;
     }
 }

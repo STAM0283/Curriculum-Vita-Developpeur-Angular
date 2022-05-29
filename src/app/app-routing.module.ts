@@ -9,6 +9,9 @@ import { TrainingComponent } from './views/curriculum-vitea.domain/section/train
 
 const routes: Routes = [
   {
+    path: '', redirectTo: 'acceuil', pathMatch: 'full'
+  },
+  {
     path: 'acceuil',
     component: HomeComponent
   },
