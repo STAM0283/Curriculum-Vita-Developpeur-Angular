@@ -1,20 +1,45 @@
 <div class="sidenav" [ngClass]="isCollapsed ? 'sidenav-collapsed' : ''">
-    <div class="logo-container">
-        <span (click)="toggleCollapse()" class="material-icons-outlined burger-menu">
-            menu
-        </span>
-        <div class="logo-text" *ngIf="isCollapsed">Angular</div>
-        <button class="btn-close" *ngIf="isCollapsed" (click)="closeSidenav()">
-            <i class="fal fa-times close-icon"></i>
-        </button>
+  <label for="">
+    <div class="menu-container" (click)="toggleCollapse()">
+      <span [ngClass]="isChecked == true ? 'topIsChecked' : 'top'"></span>
+      <span [ngClass]="isChecked == true ? 'middleChecked' : 'middle'"></span>
+      <span
+        [ngClass]="isChecked == true ? 'bottomChecked' : 'bottom'"
+        id="bottom"
+      ></span>
     </div>
-    <ul class="sidenav-nav">
-        <li class="side-nav-item" *ngFor="let data of navData">
-            <a class="sidenav-nav-link" [routerLink]="[data.routerLink]" routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">
-                <span class="sidenav-link-icon" [class]="data.icon">{{data.iconeContent}}</span>
-                <span class="sindenav-link-text" *ngIf="isCollapsed">{{data.label}}</span>
-            </a>
-        </li>
-    </ul>
+  </label>
+  <div class="logo-container">
+    <div class="user-profile" @fadeInOut *ngIf="isCollapsed">
+      {{ userProfile.FirstName }} {{ userProfile.LastName }}
+    </div>
+    <button
+      class="btn-close"
+      @rotate
+      *ngIf="isCollapsed"
+      (click)="closeSidenav()"
+    >
+      <i class="fal fa-times close-icon"></i>
+    </button>
+  </div>
+  <div class="picture" *ngIf="isCollapsed">
+    <img width="100" height="100" src="{{ userProfile.PicturePath }}" alt="" />
+  </div>
+  <ul class="sidenav-nav">
+    <li class="side-nav-item" *ngFor="let data of navData">
+      <a
+        class="sidenav-nav-link"
+        [routerLink]="[data.routerLink]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <span class="sidenav-link-icon" [class]="data.icon">{{
+          data.iconeContent
+        }}</span>
+        <span class="sindenav-link-text" @fadeInOut *ngIf="isCollapsed">{{
+          data.label
+        }}</span>
+      </a>
+    </li>
+  </ul>
 </div>

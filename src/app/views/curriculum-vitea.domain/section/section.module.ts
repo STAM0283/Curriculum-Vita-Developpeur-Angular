@@ -7,6 +7,7 @@ import { TrainingComponent } from './training/training.component';
 import { SkillComponent } from './skill/skill.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { EmailComponent } from './email/email.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -21,7 +22,8 @@ import { EmailComponent } from './email/email.component';
   ],
   imports: [
     CommonModule,
-    SectionRoutingModule
+    SectionRoutingModule,
+    TranslateModule
   ]
 })
 export class SectionModule { }

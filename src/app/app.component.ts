@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { SideNavToggle } from './views/curriculum-vitea.domain/_shared/common/SideNavToggle';
 
 @Component({
@@ -9,6 +10,18 @@ import { SideNavToggle } from './views/curriculum-vitea.domain/_shared/common/Si
 export class AppComponent {
   title = 'Curriculum-Vita-Developpeur-Angular';
 
+  supportLanguages = ['fr', 'en', 'ar'];
+
+  /**
+   *
+   */
+  constructor(private translateService: TranslateService) {
+    translateService.addLangs(this.supportLanguages);
+    translateService.setDefaultLang('fr');
+
+    const browserLang = this.translateService.getBrowserLang() as string;
+    this.translateService.use(browserLang);
+  }
   isSideNavCollapsed: boolean = false;
   screenWidth = 0;
 

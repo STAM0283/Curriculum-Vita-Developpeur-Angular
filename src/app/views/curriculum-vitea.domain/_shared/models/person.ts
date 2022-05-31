@@ -4,22 +4,27 @@ import { LvfGender } from "../enums/lvf-gender";
 export interface IPersonInfo extends IEntityBaseInfo {
     FirstName: string;
     LastName: string;
-    Profile: string;
+    Profile?: string;
     Email: string;
     LvfGender: LvfGender;
     Nationality: string;
     PhoneNumber: string;
+    Picture?: string;
 }
 
 export class Person extends EntityBase {
 
     FirstName: string;
     LastName: string;
-    Profile: string;
+    Profile?: string;
     Email: string;
     LvfGender: LvfGender;
     Nationality: string;
     PhoneNumber: string;
+    Picture?: string;
+
+    // Client side properties
+    PicturePath?: string;
 
     /**
      * Create an instance of Person
@@ -33,7 +38,9 @@ export class Person extends EntityBase {
         this.Email = info.Email;
         this.LvfGender = info.LvfGender;
         this.Nationality = info.Nationality;
-        this.PhoneNumber = info.PhoneNumber
+        this.PhoneNumber = info.PhoneNumber;
+        this.Picture = info.Picture;
+        this.PicturePath = `assets/images/${this.Picture}`
 
     }
 }
