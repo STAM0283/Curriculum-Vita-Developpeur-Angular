@@ -1,11 +1,11 @@
 export interface IEntityBaseInfo {
 
-    Id: number;
-    IsActive: boolean;
+    Id?: number;
+    IsActive?: boolean;
 }
 
 export class EntityBase {
-    
+
     Id: number;
     IsActive: boolean;
     /**
@@ -14,8 +14,8 @@ export class EntityBase {
     */
     constructor(info: IEntityBaseInfo) {
 
-        this.Id = info.Id,
-        this.IsActive = info.IsActive;
+        this.Id = info.Id ?? 1,
+        this.IsActive = info.IsActive ?? true;
 
     }
 }

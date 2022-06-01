@@ -10,8 +10,11 @@
     </div>
   </label>
   <div class="logo-container">
+    <div class="initial-person" [ngStyle]="{ 'background-color': userProfile?.InitialBackGround }">
+      {{ userProfile?.Initials }}
+    </div>
     <div class="user-profile" @fadeInOut *ngIf="isCollapsed">
-      {{ userProfile.FirstName }} {{ userProfile.LastName }}
+      {{ userProfile?.FirstName }} {{ userProfile?.LastName }}
     </div>
     <button
       class="btn-close"
@@ -23,7 +26,7 @@
     </button>
   </div>
   <div class="picture" *ngIf="isCollapsed">
-    <img width="100" height="100" src="{{ userProfile.PicturePath }}" alt="" />
+    <img width="100" height="100" src="{{ userProfile?.PicturePath }}" alt="" />
   </div>
   <ul class="sidenav-nav">
     <li class="side-nav-item" *ngFor="let data of navData">
