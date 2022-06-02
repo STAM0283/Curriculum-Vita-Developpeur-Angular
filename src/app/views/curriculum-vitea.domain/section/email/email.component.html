@@ -1,1 +1,72 @@
-<p>email works!</p>
+<div class="header-label">
+  <h3>{{ "app.shared.contactme" | translate }}</h3>
+</div>
+<form class="container-fluid" #contactForm="ngForm">
+  <div class="form-group">
+    <div class="form_input">
+      <label for="name" class="required">{{
+        "app.shared.name" | translate
+      }}</label>
+      <input
+        required
+        type="text"
+        id="name"
+        class="form-control"
+        name="name"
+        [(ngModel)]="email.Name"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form_input">
+      <label for="city" class="required">{{
+        "app.shared.city" | translate
+      }}</label>
+      <input
+        required
+        type="text"
+        id="city"
+        name="city"
+        class="form-control"
+        [(ngModel)]="email.City"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form_input">
+      <label for="email" class="required">{{
+        "app.shared.email" | translate
+      }}</label>
+      <input
+        required
+        type="text"
+        id="email"
+        name="email"
+        class="form-control"
+        [(ngModel)]="email.Email"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form_input">
+      <label for="message" class="required">{{
+        "app.shared.message" | translate
+      }}</label>
+      <textarea
+        required
+        name="message"
+        id="message"
+        name="message"
+        cols="30"
+        rows="10"
+        class="form-control"
+        maxlength="2500"
+        [(ngModel)]="email.Message"
+      >
+      </textarea>
+      <label *ngIf="email.Message" for="message" class="float-right">{{
+        2500 - email.Message.length
+      }}</label>
+    </div>
+  </div>
+</form>

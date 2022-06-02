@@ -9,7 +9,6 @@ import { ContainerSectionComponent } from './views/curriculum-vitea.domain/conta
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HomeComponent } from './views/curriculum-vitea.domain/section/home/home.component';
 import { ContainerSectionModule } from './views/curriculum-vitea.domain/container-section/container-section.module';
 
 // function to export into factories about translate module
@@ -31,6 +30,7 @@ export function FactoryHttpLoader(http: HttpClient){
     BrowserAnimationsModule,
     ContainerSectionModule,
     HttpClientModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -39,6 +39,7 @@ export function FactoryHttpLoader(http: HttpClient){
       }
     })
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

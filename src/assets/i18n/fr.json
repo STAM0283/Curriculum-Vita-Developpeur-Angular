@@ -1,5 +1,10 @@
 {
     "app.shared.home": "Accueil",
     "app.shared.experience": "Expériences",
-    "app.shared.training": "Formations"
+    "app.shared.training": "Formations",
+    "app.shared.name": "Nom",
+    "app.shared.city": "Région",
+    "app.shared.email": "E-mail",
+    "app.shared.message": "Message",
+    "app.shared.contactme": "Contactez moi"
 }

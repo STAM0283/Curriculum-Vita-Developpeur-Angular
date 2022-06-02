@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,32 +19,45 @@ $Curriculum-Vita-Developpeur-Angular-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$Curriculum-Vita-Developpeur-Angular-theme: mat.define-light-theme((
-  color: (
-    primary: $Curriculum-Vita-Developpeur-Angular-primary,
-    accent: $Curriculum-Vita-Developpeur-Angular-accent,
-    warn: $Curriculum-Vita-Developpeur-Angular-warn,
+$Curriculum-Vita-Developpeur-Angular-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $Curriculum-Vita-Developpeur-Angular-primary,
+      accent: $Curriculum-Vita-Developpeur-Angular-accent,
+      warn: $Curriculum-Vita-Developpeur-Angular-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($Curriculum-Vita-Developpeur-Angular-theme);
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-@import '~material-design-icons/iconfont/material-icons.css';
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import "~material-design-icons/iconfont/material-icons.css";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    position: relative;
-    font-family: 'roboto', sans-serif;
+body {
+  position: relative;
+  font-family: "roboto", sans-serif;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.required::after {
+  content: "*";
+  color: red;
+}

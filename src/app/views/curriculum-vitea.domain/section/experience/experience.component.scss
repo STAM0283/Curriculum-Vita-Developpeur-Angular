@@ -3,6 +3,28 @@
   justify-content: space-between;
   flex-wrap: wrap;
 
+  #card-A:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+
+  #card-B:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+  #card-C:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+  #card-D:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+
   .card {
     display: flex;
     flex-direction: column;
@@ -11,6 +33,37 @@
     background-color: #fff;
     margin: 1.25rem 0 1.25rem 0;
     box-shadow: 0 0.25rem 0.5rem #e6edef;
+
+    .card-head-A,
+    .card-head-B,
+    .card-head-C,
+    .card-head-D {
+      background-color: #dfdadc;
+    }
+
+    .title-first {
+      animation: towrite 2s steps(60, end);
+    }
+    .title-second {
+      animation: towrite 2s steps(80, end);
+    }
+
+    .title-third {
+      animation: towrite 2s steps(100, end);
+    }
+
+    .title-fourth {
+      animation: towrite 2s steps(120, end);
+    }
+
+    @keyframes towrite {
+      from {
+        width: 0;
+      }
+      to {
+        width: 50%;
+      }
+    }
 
     .card-head {
       padding: 1rem 1.5rem;

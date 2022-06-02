@@ -10,7 +10,10 @@
     </div>
   </label>
   <div class="logo-container">
-    <div class="initial-person" [ngStyle]="{ 'background-color': userProfile?.InitialBackGround }">
+    <div
+      class="initial-person"
+      [ngStyle]="{ 'background-color': userProfile?.InitialBackGround }"
+    >
       {{ userProfile?.Initials }}
     </div>
     <div class="user-profile" @fadeInOut *ngIf="isCollapsed">
