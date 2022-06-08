@@ -1,0 +1,6 @@
+<button type="submit" [disabled]="!isValidForm" (click)="onAction()">
+  <span class="material-icons-outlined icon-submit">
+    {{btnIcon}}
+    </span>
+  <span>{{btnLabel | translate}}</span>
+</button>

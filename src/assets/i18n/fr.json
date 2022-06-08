@@ -6,5 +6,8 @@
     "app.shared.city": "Région",
     "app.shared.email": "E-mail",
     "app.shared.message": "Message",
-    "app.shared.contactme": "Contactez moi"
+    "app.shared.contactme": "Contactez moi",
+    "app.shared.submit": "Envoyer",
+    "app.shared.cancel": "Annuler",
+    "app.shared.characterremaining": "caractère(s) restant(s)"
 }

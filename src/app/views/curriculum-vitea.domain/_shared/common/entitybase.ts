@@ -6,8 +6,8 @@ export interface IEntityBaseInfo {
 
 export class EntityBase {
 
-    Id: number;
-    IsActive: boolean;
+    Id?: number;
+    IsActive?: boolean;
     /**
     * @class Entitybase
     * @classdesc Represents the base class shared by all entities.

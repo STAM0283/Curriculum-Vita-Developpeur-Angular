@@ -8,15 +8,20 @@ import { Email } from '../../_shared/models/email-content';
 })
 export class EmailComponent implements OnInit {
 
-  email: Email = {};
+  email!: Email;
+  btnStyle: string = "";
 
   constructor() { }
 
   ngOnInit(): void {
+    this.email = new Email({});
   }
 
-  displayEmail(){
+  submitEmail() {
     console.log(this.email);
+  }
 
+  resetForm(){
+    this.email = new Email({});
   }
 }

@@ -1,7 +1,7 @@
-<div class="header-label">
-  <h3>{{ "app.shared.contactme" | translate }}</h3>
-</div>
-<form class="container-fluid" #contactForm="ngForm">
+<form class="container-fluid col-md-6" #contactForm="ngForm">
+  <div class="header-label">
+    <h3>{{ "app.shared.contactme" | translate }}</h3>
+  </div>
   <div class="form-group">
     <div class="form_input">
       <label for="name" class="required">{{
@@ -58,7 +58,7 @@
         id="message"
         name="message"
         cols="30"
-        rows="10"
+        rows="8"
         class="form-control"
         maxlength="2500"
         [(ngModel)]="email.Message"
@@ -66,7 +66,9 @@
       </textarea>
       <label *ngIf="email.Message" for="message" class="float-right">{{
         2500 - email.Message.length
-      }}</label>
+      }} {{'app.shared.characterremaining' | translate}}</label><br>
     </div>
   </div>
+  <app-multi-btn [config]="email.BtnConfig"></app-multi-btn>
 </form>
+

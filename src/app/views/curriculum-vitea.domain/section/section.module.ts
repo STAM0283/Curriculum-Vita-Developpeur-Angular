@@ -9,6 +9,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { EmailComponent } from './email/email.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
+import { MultiBtnModule } from '../_shared/components/buttons/multi-btn/multi-btn.module';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -25,7 +27,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     SectionRoutingModule,
-    TranslateModule
+    TranslateModule,
+    MultiBtnModule,
+    NgbTooltipModule
   ]
 })
 export class SectionModule { }
