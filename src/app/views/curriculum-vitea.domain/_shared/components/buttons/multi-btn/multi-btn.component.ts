@@ -9,10 +9,13 @@ import { MultyBtnConfig } from './multi-btn-config';
 export class MultiBtnComponent implements OnInit {
 
   @Input() config?: MultyBtnConfig;
+  @Input() isValid?: boolean = true;
+  @Input() btnToDisable!: number;
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

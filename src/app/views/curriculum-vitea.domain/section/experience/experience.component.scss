@@ -1,6 +1,6 @@
 .experience-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 
   #card-A:hover {
@@ -28,7 +28,7 @@
   .card {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 400px;
     border-radius: 0.5rem;
     background-color: #fff;
     margin: 1.25rem 0 1.25rem 0;

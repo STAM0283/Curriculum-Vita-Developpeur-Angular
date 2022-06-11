@@ -1,5 +1,5 @@
 <div class="container-btn float-right">
-  <button *ngFor="let btn of config?.buttons | orderBy: 'Order'" [style]="btn.Style"
+  <button [disabled]="btn.Order == btnToDisable ? isValid : false" *ngFor="let btn of config?.buttons | orderBy: 'Order'" [style]="btn.Style"
   ngbTooltip="{{btn.HoverTitle | translate }}" [class]="btn.Class" (click)="btn.Handler()">{{btn.Label |
     translate}}</button>
 </div>

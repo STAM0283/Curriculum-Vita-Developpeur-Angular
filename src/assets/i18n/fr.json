@@ -3,11 +3,18 @@
     "app.shared.experience": "Expériences",
     "app.shared.training": "Formations",
     "app.shared.name": "Nom",
+    "app.shared.angulardotnetdevelopper": "Développeur Full Stack Angular/.Net",
+    "app.shared.profile": "Fort de ma passion pour le domaine du développement informatique et un grand sens de la curiosité, je suis une personne dynamique, rigoureuse, et très investie dans mon travail.\n\nActuellement je suis Développeur Angular/.net chez DTeK Consulting :\n\n ● Développement Frontend avec Angular 13 (HTML5, CSS3 et JavaScript/TypeScript).\n ● Création d'API Rest avec une architecture N-Tier (.Net, C#, Entity Framework). \n ● Modélisation de la base de données avec SQL Server.",
     "app.shared.city": "Région",
     "app.shared.email": "E-mail",
     "app.shared.message": "Message",
     "app.shared.contactme": "Contactez moi",
     "app.shared.submit": "Envoyer",
     "app.shared.cancel": "Annuler",
-    "app.shared.characterremaining": "caractère(s) restant(s)"
+    "app.shared.characterremaining": "caractère(s) restant(s)",
+    "app.shared.fieldrequired" : "* Champ obligatoire",
+    "app.shared.minlength" : "La longueur de ce champ doit être entre 2 et 50 caractères.",
+    "app.shared.messageminlength" : "La longueur de ce champ doit être entre 2 et 2500 caractères.",
+    "app.shared.emailnotvalid" : "Entrez une adresse valide sans caractères spéciaux. Exemple : contact@nom.com"
+
 }

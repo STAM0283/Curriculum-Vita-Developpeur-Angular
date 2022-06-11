@@ -3,48 +3,36 @@
     <div class="menu-container" (click)="toggleCollapse()">
       <span [ngClass]="isChecked == true ? 'topIsChecked' : 'top'"></span>
       <span [ngClass]="isChecked == true ? 'middleChecked' : 'middle'"></span>
-      <span
-        [ngClass]="isChecked == true ? 'bottomChecked' : 'bottom'"
-        id="bottom"
-      ></span>
+      <span [ngClass]="isChecked == true ? 'bottomChecked' : 'bottom'" id="bottom"></span>
     </div>
   </label>
   <div class="logo-container">
-    <div
-      class="initial-person"
-      [ngStyle]="{ 'background-color': userProfile?.InitialBackGround }"
-    >
+    <div class="initial-person" [ngStyle]="{ 'background-color': userProfile?.InitialBackGround }">
       {{ userProfile?.Initials }}
     </div>
     <div class="user-profile" @fadeInOut *ngIf="isCollapsed">
       {{ userProfile?.FirstName }} {{ userProfile?.LastName }}
     </div>
-    <button
-      class="btn-close"
-      @rotate
-      *ngIf="isCollapsed"
-      (click)="closeSidenav()"
-    >
+    <button class="btn-close" @rotate *ngIf="isCollapsed" (click)="closeSidenav()">
       <i class="fal fa-times close-icon"></i>
     </button>
+  </div>
+  <div class="user-job" @fadeInOut *ngIf="isCollapsed">
+    {{userProfile!.Job | translate}}
   </div>
   <div class="picture" *ngIf="isCollapsed">
     <img width="100" height="100" src="{{ userProfile?.PicturePath }}" alt="" />
   </div>
   <ul class="sidenav-nav">
     <li class="side-nav-item" *ngFor="let data of navData">
-      <a
-        class="sidenav-nav-link"
-        [routerLink]="[data.routerLink]"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
+      <a class="sidenav-nav-link" [routerLink]="[data.routerLink]" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
         <span class="sidenav-link-icon" [class]="data.icon">{{
           data.iconeContent
-        }}</span>
+          }}</span>
         <span class="sindenav-link-text" @fadeInOut *ngIf="isCollapsed">{{
           data.label
-        }}</span>
+          }}</span>
       </a>
     </li>
   </ul>

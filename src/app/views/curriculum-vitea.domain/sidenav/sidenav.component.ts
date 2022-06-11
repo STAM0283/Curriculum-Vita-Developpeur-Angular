@@ -50,6 +50,7 @@ export class SidenavComponent implements OnInit {
     this.getPersons();
     if (this.persons?.length > 0) {
       this.userProfile = this.persons[0];
+      this.personService.persons = this.persons;
     }
   }
   getPersons() {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Person } from '../../_shared/models/person';
+import { PersonService } from '../../_shared/services/person.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  persons! : Person[];
+  userProfile! : Person;
+
+  constructor(private personService: PersonService) { }
 
   ngOnInit(): void {
+    this.persons = this.personService.persons;
+    this.userProfile = this.persons[0];
+
   }
 
 }

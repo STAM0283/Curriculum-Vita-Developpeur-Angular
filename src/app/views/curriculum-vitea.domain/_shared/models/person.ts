@@ -4,7 +4,8 @@ import { LvfGender } from '../enums/lvf-gender';
 export interface IPersonInfo extends IEntityBaseInfo {
   FirstName: string;
   LastName: string;
-  Profile?: string;
+  Job: string;
+  Profile: string;
   Email: string;
   LvfGender: LvfGender;
   Nationality: string;
@@ -16,7 +17,8 @@ export interface IPersonInfo extends IEntityBaseInfo {
 export class Person extends EntityBase {
   FirstName: string;
   LastName: string;
-  Profile?: string;
+  Job: string;
+  Profile: string;
   Email: string;
   LvfGender: LvfGender;
   Nationality: string;
@@ -34,13 +36,14 @@ export class Person extends EntityBase {
   constructor(info: IPersonInfo) {
     super(info);
 
-    this.FirstName = info.FirstName ?? 'Amine';
-    this.LastName = info.LastName ?? 'STAMBOULI';
+    this.FirstName = info.FirstName;
+    this.LastName = info.LastName;
+    this.Job = info.Job;
     this.Profile = info.Profile;
-    this.Email = info.Email ?? 'aminestambouli90@yahoo.fr';
-    this.LvfGender = info.LvfGender ?? LvfGender.MAL;
-    this.Nationality = info.Nationality ?? 'FRANÇAISE';
-    this.PhoneNumber = info.PhoneNumber ?? '0699069390';
+    this.Email = info.Email;
+    this.LvfGender = info.LvfGender;
+    this.Nationality = info.Nationality;
+    this.PhoneNumber = info.PhoneNumber;
     this.Picture = info.Picture ?? 'photo_amine.png';
 
     if (this.Picture && this.Picture.trim() != '') {

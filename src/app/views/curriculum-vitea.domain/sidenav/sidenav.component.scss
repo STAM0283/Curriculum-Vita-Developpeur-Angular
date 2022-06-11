@@ -18,6 +18,14 @@
     margin-left: 14px;
   }
 
+  %user-info {
+    text-align: center;
+    margin-left: 1.5rem;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+  }
+
   %spanStyle {
     display: block;
     position: relative;
@@ -91,21 +99,10 @@
       font-weight: 900;
     }
 
-    .user-profile {
-      text-align: center;
-      margin-left: 1.5rem;
-      font-size: 14px;
-      font-weight: 700;
-      color: #fff;
-      overflow: hidden; /* Ensures the content is not revealed until the animation */
-      white-space: nowrap; /* Keeps the content on a single line */
-      // animation:
-      // towrite 2s steps(60, end),
+    .user-profile,
+    .user-job {
+      @extend %user-info;
     }
-    // @keyframes towrite {
-    //     from { width: 0 }
-    //     to { width: 50% }
-    //   }
 
     .btn-close {
       margin-left: auto;
@@ -121,7 +118,10 @@
       }
     }
   }
-
+  
+  .user-job {
+    @extend %user-info;
+  }
   .picture {
     margin-left: 3.5rem;
     transition: all 0.3s ease;

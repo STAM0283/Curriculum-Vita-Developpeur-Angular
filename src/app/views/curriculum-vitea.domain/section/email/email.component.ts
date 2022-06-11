@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModel } from '@angular/forms';
 import { Email } from '../../_shared/models/email-content';
 
 @Component({
@@ -10,11 +11,13 @@ export class EmailComponent implements OnInit {
 
   email!: Email;
   btnStyle: string = "";
+  model!: NgModel
 
   constructor() { }
 
   ngOnInit(): void {
     this.email = new Email({});
+
   }
 
   submitEmail() {

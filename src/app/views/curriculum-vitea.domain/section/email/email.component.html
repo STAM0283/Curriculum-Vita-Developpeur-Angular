@@ -6,69 +6,60 @@
     <div class="form_input">
       <label for="name" class="required">{{
         "app.shared.name" | translate
-      }}</label>
-      <input
-        required
-        type="text"
-        id="name"
-        class="form-control"
-        name="name"
-        [(ngModel)]="email.Name"
-      />
+        }}</label>
+      <input required type="text" id="name" class="form-control" name="name" [(ngModel)]="email.Name" #name="ngModel"
+        pattenr="\S(.){1,}" minlength="2" autocomplete="off" />
+      <label for="" class="text-danger"
+        *ngIf="name.invalid && (name.dirty && email.Name == '' || name.touched && email.Name == null)">{{'app.shared.fieldrequired'
+        | translate}}</label>
+      <label class="text-danger" for="" *ngIf="name.errors?.['minlength']">{{'app.shared.minlength' |
+        translate}}</label>
     </div>
   </div>
   <div class="form-group">
     <div class="form_input">
       <label for="city" class="required">{{
         "app.shared.city" | translate
-      }}</label>
-      <input
-        required
-        type="text"
-        id="city"
-        name="city"
-        class="form-control"
-        [(ngModel)]="email.City"
-      />
+        }}</label>
+      <input required type="text" id="city" name="city" class="form-control" pattern="\S(.){1,}" minlength="2"
+        [(ngModel)]="email.City" #city="ngModel" autocomplete="off" />
+      <label *ngIf="city.invalid && (city.dirty && email.City == '' || city.touched && email.City == null)" for="city"
+        class="text-danger">{{'app.shared.fieldrequired'
+        | translate}}</label>
+      <label for="city" class="text-danger" *ngIf="city.errors?.['minlength']">{{'app.shared.minlength' |
+        translate}}</label>
     </div>
   </div>
   <div class="form-group">
     <div class="form_input">
       <label for="email" class="required">{{
         "app.shared.email" | translate
-      }}</label>
-      <input
-        required
-        type="text"
-        id="email"
-        name="email"
-        class="form-control"
-        [(ngModel)]="email.Email"
-      />
+        }}</label>
+      <input pattern="^[a-zA-Z0-9-._]+@[a-zA-Z0-9-_]+\.[a-z]{2,5}$" required type="text" maxlength="254" id="email"
+        name="email" class="form-control" [(ngModel)]="email.Email" #emailUser="ngModel" autocomplete="off" />
+        <label for="email" class="text-danger" *ngIf="emailUser.dirty && email.Email == '' || emailUser.touched && email.Email == null">{{'app.shared.fieldrequired' | translate}}</label>
+      <label for="email" class="text-danger"
+        *ngIf="emailUser.invalid && email.Email pattern">{{'app.shared.emailnotvalid' | translate}}</label>
     </div>
   </div>
   <div class="form-group">
     <div class="form_input">
       <label for="message" class="required">{{
         "app.shared.message" | translate
-      }}</label>
-      <textarea
-        required
-        name="message"
-        id="message"
-        name="message"
-        cols="30"
-        rows="8"
-        class="form-control"
-        maxlength="2500"
-        [(ngModel)]="email.Message"
-      >
+        }}</label>
+      <textarea required name="message" id="message" name="message" cols="30" rows="8" class="form-control"
+        minlength="2" maxlength="2500" [(ngModel)]="email.Message" #message="ngModel">
       </textarea>
+      <label for="message" class="text-danger"
+        *ngIf="message.dirty && email.Message == '' || message.touched && email.Message == null">{{'app.shared.fieldrequired'
+        | translate}}</label>
+      <label for="message" class="text-danger" *ngIf="message.errors?.['minlength']">{{'app.shared.messageminlength' |
+        translate}}</label><br>
       <label *ngIf="email.Message" for="message" class="float-right">{{
         2500 - email.Message.length
-      }} {{'app.shared.characterremaining' | translate}}</label><br>
+        }} {{'app.shared.characterremaining' | translate}}</label><br>
     </div>
   </div>
-  <app-multi-btn [config]="email.BtnConfig"></app-multi-btn>
+  <app-multi-btn [btnToDisable]="2" [isValid]="!contactForm.valid? true : false" [config]="email.BtnConfig">
+  </app-multi-btn>
 </form>
-

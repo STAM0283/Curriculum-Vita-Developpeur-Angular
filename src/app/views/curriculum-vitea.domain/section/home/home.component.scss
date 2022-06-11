@@ -11,9 +11,18 @@
         border-bottom: 1px solid #edf1f7;
         font-size: 1rem;
         font-weight: 600;
+        background-color: #dfdadc;
     }
 
     .card-body{
         padding: 1rem 1.5rem;
+    }
+    .img-profile{
+      width: 20%;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      text-align: justify;
     }
 }

@@ -46,7 +46,7 @@ export class Email {
         }),
 
         new MultyBtn(<IMultyBtnInfo>{
-          Style: "background-color: #FE193F; #fff",
+          Style: "background-color: #FE193F; color: #fff",
           Class: "btn btn-danger",
           Label: "app.shared.cancel",
           HoverTitle: "app.shared.cancel",

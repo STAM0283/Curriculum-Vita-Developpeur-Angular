@@ -8,11 +8,12 @@ export  class Data{
       IsActive: true,
       FirstName: "AMINE",
       LastName: "STAMBOULI",
+      Job: "app.shared.angulardotnetdevelopper",
+      Profile: "app.shared.profile",
       Nationality: "FRANÇAISE",
       PhoneNumber: "0699069390",
       Email: "aminestambouli90@yahoo.fr",
       LvfGender: LvfGender.MAL,
-      PicturePath: "assets/images/photo_amine.png",
     }
   ]
 }
