@@ -40,7 +40,12 @@
     .card-head-D {
       background-color: #dfdadc;
     }
-
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      text-align: justify;
+      font-size: 12px;
+    }
     .title-first {
       animation: towrite 2s steps(60, end);
     }

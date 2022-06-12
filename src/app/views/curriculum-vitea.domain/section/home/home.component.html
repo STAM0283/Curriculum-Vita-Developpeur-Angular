@@ -1,6 +1,9 @@
+<div>
+  <app-btn-config *ngIf="userProfile.BtnConfig" [config]="userProfile?.BtnConfig"></app-btn-config>
+</div>
 <h1 class="title-home">{{'app.shared.home' | translate}}</h1>
 <div class="card">
-  <div class="card-head">consectetur adipiscing elit</div>
+  <div class="card-head">{{userProfile?.FirstName}} {{userProfile?.LastName}} - {{userProfile!.Job | translate}}</div>
   <div class="card-body">
     <pre>{{userProfile.Profile | translate}}</pre>
   </div>

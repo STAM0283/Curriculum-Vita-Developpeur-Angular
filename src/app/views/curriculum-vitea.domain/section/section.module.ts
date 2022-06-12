@@ -11,6 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { MultiBtnModule } from '../_shared/components/buttons/multi-btn/multi-btn.module';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { BtnConfigModule } from '../_shared/components/buttons/btn-config/btn-config.module';
 
 
 
@@ -29,7 +30,8 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
     SectionRoutingModule,
     TranslateModule,
     MultiBtnModule,
-    NgbTooltipModule
+    NgbTooltipModule,
+    BtnConfigModule
   ]
 })
 export class SectionModule { }

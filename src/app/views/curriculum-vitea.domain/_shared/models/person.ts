@@ -1,4 +1,6 @@
 import { EntityBase, IEntityBaseInfo } from '../common/entitybase';
+import { BtnConfig, IBtnConfigInfo } from '../components/buttons/btn-config/btn-config';
+import { BtnConfiguration, IBtnConfigurationInfo } from '../components/buttons/btn-config/btn-config-configuration';
 import { LvfGender } from '../enums/lvf-gender';
 
 export interface IPersonInfo extends IEntityBaseInfo {
@@ -30,6 +32,8 @@ export class Person extends EntityBase {
   Initials: string;
   InitialBackGround?: string;
 
+  BtnConfig?: BtnConfiguration;
+
   /**
    * Create an instance of Person
    */
@@ -51,6 +55,26 @@ export class Person extends EntityBase {
     }
     this.InitialBackGround = this.getRandomColor();
     this.Initials = this.getInitials();
+    if(this.Id){
+      this.BtnConfig = this.buildBtnConfig();
+    }
+  }
+
+  buildBtnConfig() {
+    return new BtnConfiguration(<IBtnConfigurationInfo>{
+      Buttons : [
+        new BtnConfig(<IBtnConfigInfo>{
+            Label: "dsjsjdhjsd",
+            Style: "",
+            Icon: "",
+            HoverTitle: "",
+            Order: 2,
+            Handler: () => alert('test')
+
+        })
+      ]
+    })
+
   }
 
   getInitials() : string {
@@ -105,11 +129,6 @@ export class Person extends EntityBase {
       return '';
     }
   }
-  // public static createInstance<T extends EntityBase>(c: { new(info: IEntityBaseInfo): T; }, info: IEntityBaseInfo = null): T {
-  //   info = info ? info : <IEntityBaseInfo>{};
-
-  //   return new c(info);
-  // }
 
  public static createInstance<T extends EntityBase>(c: { new (info: IEntityBaseInfo): T }, info?: IEntityBaseInfo): T {
    info = info ? info : <IEntityBaseInfo>{}

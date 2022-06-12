@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BtnResetComponent } from './btn-reset.component';
+import { BtnConfigComponent } from './btn-config.component';
 
 
 
 @NgModule({
+  exports: [
+    BtnConfigComponent
+  ],
   declarations: [
-    BtnResetComponent
+    BtnConfigComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class BtnResetModule { }
+export class BtnConfigModule { }
