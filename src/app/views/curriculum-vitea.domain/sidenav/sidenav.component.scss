@@ -118,7 +118,7 @@
       }
     }
   }
-  
+
   .user-job {
     @extend %user-info;
   }
@@ -183,4 +183,8 @@
   .sindenav-link-text {
     color: #000;
   }
+}
+
+.profile-picture{
+  filter: invert(1) hue-rotate(180deg) !important;
 }

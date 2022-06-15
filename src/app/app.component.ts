@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SideNavToggle } from './views/curriculum-vitea.domain/_shared/common/SideNavToggle';
+import { PersonService } from './views/curriculum-vitea.domain/_shared/services/person.service';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,14 @@ export class AppComponent {
   title = 'Curriculum-Vita-Developpeur-Angular';
 
   supportLanguages = ['fr', 'en', 'ar'];
+  htmlClass?:  string;
+
 
   /**
    *
    */
-  constructor(private translateService: TranslateService) {
+  constructor(private translateService: TranslateService,
+    private personService: PersonService) {
     translateService.addLangs(this.supportLanguages);
     translateService.setDefaultLang('fr');
 
@@ -28,5 +32,12 @@ export class AppComponent {
   onToggleSideNav(data: SideNavToggle): void {
     this.isSideNavCollapsed = data.IsCollapsed;
     this.screenWidth = data.ScreenWidth;
+  }
+
+  enableDarkMode(): string {
+    if (this.personService.isDarkActif) {
+      return "darkMode";
+    }
+    return "";
   }
 }

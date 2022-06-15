@@ -10,6 +10,7 @@ import { IPersonInfo, Person } from '../models/person';
 export class PersonService {
 
   persons: Person[] = [];
+  isDarkActif: boolean = false;
 
   constructor() { }
 

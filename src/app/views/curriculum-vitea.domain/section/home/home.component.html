@@ -1,5 +1,6 @@
 <div>
-  <app-btn-config *ngIf="userProfile.BtnConfig" [config]="userProfile?.BtnConfig"></app-btn-config>
+  <label for="">{{'app.shared.darkmode' | translate}}</label>
+  <app-btn-config (action)="putDarkMode()" *ngIf="userProfile.BtnConfig" [config]="userProfile?.BtnConfig"></app-btn-config>
 </div>
 <h1 class="title-home">{{'app.shared.home' | translate}}</h1>
 <div class="card">

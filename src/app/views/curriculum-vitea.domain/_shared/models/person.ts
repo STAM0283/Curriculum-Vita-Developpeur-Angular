@@ -64,14 +64,16 @@ export class Person extends EntityBase {
     return new BtnConfiguration(<IBtnConfigurationInfo>{
       Buttons : [
         new BtnConfig(<IBtnConfigInfo>{
-            Label: "dsjsjdhjsd",
+            Label: "Actif",
             Style: "",
+            Class: "btn btn-dark",
             Icon: "",
             HoverTitle: "",
             Order: 2,
-            Handler: () => alert('test')
+            Handler: () => {}
 
-        })
+        }),
+
       ]
     })
 

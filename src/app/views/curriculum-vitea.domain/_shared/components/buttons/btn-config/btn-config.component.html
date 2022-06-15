@@ -1,7 +1,7 @@
-<div class="container-btn">
+<div class="container-btn d-flex mb-4">
   <div *ngFor="let btn of config?.Buttons">
-    <div>
+    <button (click)="btn.Handler(null)" (click)="onAction()" [class]="btn.Class">
       {{btn.Label}}
-    </div>
+    </button>
   </div>
 </div>

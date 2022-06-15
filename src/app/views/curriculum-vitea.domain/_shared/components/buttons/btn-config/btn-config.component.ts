@@ -8,11 +8,15 @@ import { BtnConfiguration } from './btn-config-configuration';
 })
 export class BtnConfigComponent implements OnInit {
 
- @Input() config?: BtnConfiguration;
- @Output() action: EventEmitter<any> = new EventEmitter();
+  @Input() config?: BtnConfiguration;
+  @Output() action: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onAction() {
+    this.action.emit();
   }
 
 }

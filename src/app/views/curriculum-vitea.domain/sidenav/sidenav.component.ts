@@ -77,4 +77,11 @@ export class SidenavComponent implements OnInit {
       ScreenWidth: this.screenWidth,
     });
   }
+
+  enableDarkMode(): string {
+    if (this.personService.isDarkActif) {
+      return "profile-picture";
+    }
+    return "";
+  }
 }

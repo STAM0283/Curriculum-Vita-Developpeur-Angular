@@ -13,6 +13,7 @@
     "app.shared.cancel": "Annuler",
     "app.shared.characterremaining": "caractère(s) restant(s)",
     "app.shared.fieldrequired" : "* Champ obligatoire",
+    "app.shared.darkmode": "Mode sombre",
     "app.shared.minlength" : "La longueur de ce champ doit être entre 2 et 50 caractères.",
     "app.shared.messageminlength" : "La longueur de ce champ doit être entre 2 et 2500 caractères.",
     "app.shared.emailnotvalid" : "Entrez une adresse valide sans caractères spéciaux. Exemple : contact@nom.com",

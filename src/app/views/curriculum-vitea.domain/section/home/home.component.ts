@@ -22,5 +22,9 @@ export class HomeComponent implements OnInit {
     this.userProfile = this.persons[0];
   }
 
+  putDarkMode() {
+    this.personService.isDarkActif = !this.personService.isDarkActif;
+  }
+
 
 }
